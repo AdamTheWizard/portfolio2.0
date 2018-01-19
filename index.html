@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chicken Fud</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <!--  JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/afac56adce.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #img-div {
+            width: 100%;
+        }
+
+        #main-img {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            right: 100vw;
+            opacity: 0;
+        }
+
+        #my-name {
+            margin: .5em 0 .1em 0;
+            text-align: center;
+            color: #6B9CFF;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 100;
+            position: relative;
+            left: 100vh;
+            opacity: 0;
+        }
+
+        #my-title {
+            margin: 0;
+            text-align: center;
+            color: #FF4081;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 100;
+            opacity: 0;
+        }
+
+        .nav {
+            width: 100%;
+            display: none;
+        }
+
+        #nav-list {
+            margin: 0;
+            padding: 0px 0;
+        }
+
+        .nav-item {
+            margin: 0;
+            padding: 10px 0;
+            text-align: center;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: #6B9CFF;
+        }
+
+        #burger-btn {
+            margin: 0;
+            padding: 10px;
+            font-size: 250%;
+            color: #6B9CFF;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="nav" id="myTopNav">
+
+        <ul id="nav-list">
+            <li class="nav-item">Projects</li>
+            <li class="nav-item">Artwork</li>
+            <li class="nav-item">About</li>
+            <li class="nav-item">Contact</li>
+            <li id="close-btn" class="nav-item"><i class="fa fa-times" aria-hidden="true"> </i> Close
+            </li>
+        </ul>
+
+    </nav>
+
+    <span id="burger-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
+
+    <div id="page-1">
+
+        <div id="img-div">
+
+            <img id="main-img" src="test.png">
+            <h1 id="my-name">Adam Stephen Wall</h1>
+            <h3 id="my-title">Web Developer - Designer</h3>
+
+        </div>
+
+    </div>
+    <script>
+        $(window).ready(function() {
+
+            $("#main-img").animate({
+                right: "-20px",
+                opacity: "1"
+            }, 1000);
+            $("#my-name").animate({
+                left: "-20px",
+                opacity: "1"
+            }, 1000, function() {
+
+                $("#my-name").animate({
+                    left: "0"
+                }, 200);
+                $("#main-img").animate({
+                    right: "0"
+                }, 200);
+                $("#my-title").animate({
+                    opacity: "1"
+                }, 1000);
+            });
+        });
+
+        $("#burger-btn").click(function() {
+
+            $(this).animate({
+                opacity: "0"
+            }, 200);
+            $(".nav").slideToggle("slow");
+
+        });
+
+        $("#close-btn").click(function() {
+
+            $(".nav").slideToggle("slow", function() {
+
+                $("#burger-btn").animate({
+                    opacity: "1"
+                }, 200);
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>
