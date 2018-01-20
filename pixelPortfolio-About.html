@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="theme-color" content="#6B9CFF" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/afac56adce.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            width: 100%;
+            display: none;
+        }
+
+        #nav-list {
+            margin: 0;
+            padding: 0px 0;
+        }
+
+        .nav-item {
+            margin: 0;
+            padding: 10px 0;
+            font-size: 150%;
+            text-align: center;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: #6B9CFF;
+        }
+
+        #burger-btn {
+            margin: 0;
+            padding: 10px;
+            font-size: 250%;
+            color: #6B9CFF;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+        .burger-btn-title {
+            color:#FF4081;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .active {
+            border-bottom: 1px solid #FF4081;
+            border-top: 1px solid #FF4081;
+            font-weight: 800;
+        }
+
+        #about-text {
+            text-align: center;
+            width: 80vw;
+            margin: 0 auto;
+            font-size: 120%;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 800;
+            padding-top:0;
+        }
+
+        #typeWriter {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .about-title {
+            border: none;
+        }
+
+        .title1 {
+            color: #6B9CFF;
+        }
+
+        .title2 {
+            color: #FF4081;
+        }
+
+        .underlined {
+            text-decoration: underline;
+        }
+
+        .hr {
+            border-top: 1px solid #6B9CFF;
+            margin: 0;
+            margin-bottom: -1em;
+        }
+
+        .fa-about {
+            font-size: 150%;
+            padding: 0.25em .5em;
+            opacity:0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <nav class="nav" id="myTopNav">
+
+        <ul id="nav-list">
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio-Projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio-Artwork.html">Artwork</a></li>
+            <li class="nav-item active"><a class="nav-link" href="pixelPortfolio-About.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio-Contact.html">Contact</a></li>
+            <li id="close-btn" class="nav-item"><i class="fa fa-times" aria-hidden="true"> </i> Close
+            </li>
+        </ul>
+
+    </nav>
+    <span id="burger-btn"><i class="fa fa-th" aria-hidden="true"></i> <span class="burger-btn-title">About</span></span>
+
+    <div id="about-text">
+
+        <p id="typeWriter"></p>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+    <script>
+        $("#burger-btn").click(function() {
+
+            $(this).animate({
+                opacity: "0"
+            }, 200);
+            $(".nav").slideToggle("slow");
+
+        });
+
+        $("#close-btn").click(function() {
+
+            $(".nav").slideToggle("slow", function() {
+
+                $("#burger-btn").animate({
+                    opacity: "1"
+                }, 200);
+            })
+
+        });
+
+        $(function() {
+            $(".nav-link").click(function(e) {
+                e.preventDefault(); // so the browser doesnt follow the link
+
+                $("body").load(this.href);
+
+            })
+        })
+
+
+        $('#typeWriter').typeIt({
+                speed: 30,
+                autoStart: true,
+                cursor: false,
+                callback: function() {
+                    
+                    $(".fa-about").animate({opacity:"1"},1000);
+                    
+                }
+            })
+
+
+            .tiType("<h3 class='about-title title1'>Hey, I'm Adam...</h3>I design things on computers and paper and do my best to find creative ways to match the two together. I spend a lot of time writing JavaScript and I always try to use my offline skills to enhance the work I do online. I'm always happy to chat or to collaberate so feel free to contact me through the link in the menu! <h3 class='about-title title2'>What have I been up to?</h3>I spent most of 2017 working on my programming and design skills. This included a LOT of of online courses from <a class='underlined' href='https://www.freecodecamp.com'> FreeCodeCamp</a> to <a class='underlined' href='https://www.sololearn.com'>SoloLearn</a> but I have no plans on slowing down. 2018 will be another year of progress and development! <h3 class='about-title title1'>What do I use online?</h3><i class='fa-about fa fa-html5' aria-hidden='true'></i> <i class='fa-about fa fa-css3' aria-hidden='true'></i> <i class='fa-about fa fa-github-alt' aria-hidden='true'></i> <i class='fa-about fa fa-wordpress' aria-hidden='true'></i> <i class='fa-about fa fa-codepen' aria-hidden='true'></i> <i class='fa-about fa fa-meetup' aria-hidden='true'></i> <i class='fa-about fa fa-stack-overflow' aria-hidden='true'></i> <i class='fa-about fa fa-free-code-camp' aria-hidden='true'></i> <i class='fa-about fa fa-medium' aria-hidden='true'></i>");
+        
+        
+    </script>
+
+</body>
+
+</html>
