@@ -29,7 +29,7 @@
 
         #nav-list {
             margin: 0;
-            padding: 0px 0;
+            padding: 0;
         }
 
         .nav-item {
@@ -48,8 +48,9 @@
             color: #6B9CFF;
             font-family: 'Open Sans Condensed', sans-serif;
         }
+
         .burger-btn-title {
-            color:#FF4081;
+            color: #FF4081;
         }
 
         a {
@@ -57,9 +58,6 @@
             color: inherit;
         }
 
-        .active {
-            font-weight: 800;
-        }
 
         #about-text {
             text-align: center;
@@ -68,7 +66,7 @@
             font-size: 110%;
             font-family: 'Open Sans Condensed', sans-serif;
             font-weight: 800;
-            padding-top:0;
+            padding-top: 0;
         }
 
         #typeWriter {
@@ -92,16 +90,30 @@
             text-decoration: underline;
         }
 
-        .hr {
-            border-top: 1px solid #6B9CFF;
-            margin: 0;
-            margin-bottom: -1em;
-        }
 
         .fa-about {
             font-size: 150%;
             padding: 0.25em .5em;
-            opacity:0;
+            opacity: 0;
+        }
+
+        #twitter-icon {
+            float: right;
+            padding: .25em;
+            font-size: 200%;
+            color: #FF4081;
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* Tablet Styles */
+        }
+
+        @media only screen and (min-width: 1224px) {
+            /* Desktop styles */
+            #about-text {
+                font-size: 175%;
+                width: 60vw;
+            }
         }
     </style>
 
@@ -123,6 +135,8 @@
 
     </nav>
     <span id="burger-btn"><i class="fa fa-th" aria-hidden="true"></i> <span class="burger-btn-title">About</span></span>
+
+    <a href="https://www.twitter.com/adamthewizard/"><span id="twitter-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
 
     <div id="about-text">
 
@@ -160,16 +174,16 @@
                 autoStart: true,
                 cursor: false,
                 callback: function() {
-                    
-                    $(".fa-about").animate({opacity:"1"},1000);
-                    
+
+                    $(".fa-about").animate({
+                        opacity: "1"
+                    }, 1000);
+
                 }
             })
 
 
             .tiType("<h3 class='about-title title1'>Hey, I'm Adam...</h3>I design things on computers and paper and do my best to find creative ways to match the two together. I spend a lot of time writing JavaScript and I always try to use my offline skills to enhance the work I do online.<h3 class='about-title title2'>What have I been up to?</h3>I spent most of 2017 working on my programming and design skills. This included a LOT of of online courses from <a class='underlined' href='https://www.freecodecamp.com'> FreeCodeCamp</a> to <a class='underlined' href='https://www.sololearn.com'>SoloLearn</a> but I have no plans on slowing down. 2018 will be another year of progress and development! <h3 class='about-title title1'>What do I use online?</h3><i class='fa-about fa fa-html5' aria-hidden='true'></i> <i class='fa-about fa fa-css3' aria-hidden='true'></i> <i class='fa-about fa fa-github-alt' aria-hidden='true'></i> <i class='fa-about fa fa-wordpress' aria-hidden='true'></i> <i class='fa-about fa fa-codepen' aria-hidden='true'></i> <i class='fa-about fa fa-meetup' aria-hidden='true'></i> <i class='fa-about fa fa-stack-overflow' aria-hidden='true'></i> <i class='fa-about fa fa-free-code-camp' aria-hidden='true'></i> <i class='fa-about fa fa-medium' aria-hidden='true'></i>");
-        
-        
     </script>
 
 </body>
