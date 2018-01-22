@@ -114,6 +114,7 @@
                 width: 30%;
             }
         }
+
     </style>
 
 </head>
@@ -179,6 +180,10 @@
             }, 200);
             $(".nav").slideToggle("slow");
 
+            $("#twitter-icon").animate({
+                opacity: "0"
+            }, 200);
+
         });
 
         $("#close-btn").click(function() {
@@ -188,9 +193,14 @@
                 $("#burger-btn").animate({
                     opacity: "1"
                 }, 200);
+
+                $("#twitter-icon").animate({
+                    opacity: "1"
+                }, 200);
             })
 
         })
+
     </script>
 
 </body>
