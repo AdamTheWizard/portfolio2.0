@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chicken Fud</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="theme-color" content="#6B9CFF" />
+
+    <!--  JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/afac56adce.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        .nav {
+            width: 100%;
+            display: none;
+        }
+
+        #nav-list {
+            margin: 0;
+            padding: 0px 0;
+        }
+
+        .nav-item {
+            margin: 0;
+            padding: 10px 0;
+            font-size: 150%;
+            text-align: center;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: #6B9CFF;
+        }
+
+        #burger-btn {
+            margin: 0;
+            padding: 10px;
+            font-size: 250%;
+            color: #6B9CFF;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+        .burger-btn-title {
+            color:#FF4081;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        
+        #container {
+            width:100%;
+            opacity:0;
+        }
+        
+        .cognito {
+            width:100%;
+            margin:0 auto;
+        }
+        
+        #twitter-icon {
+            float:right;
+            padding:.25em;
+            font-size:200%;
+            color:#FF4081;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            /* Tablet Styles */
+            .cognito {
+                width:50%;
+            }
+            
+        }
+        
+        @media only screen and (min-width: 1224px) {
+            /* Desktop styles */
+            .cognito {
+                width:50%;
+            }
+            
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="nav" id="myTopNav">
+
+        <ul id="nav-list">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio-Projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio-Artwork.html">Artwork</a></li>
+            <li class="nav-item"><a class="nav-link" href="pixelPortfolio-About.html">About</a></li>
+            <li id="close-btn" class="nav-item"><i class="fa fa-times" aria-hidden="true"> </i> Close
+            </li>
+        </ul>
+
+    </nav>
+
+    <span id="burger-btn"><i class="fa fa-th" aria-hidden="true"></i> <span class="burger-btn-title">Contact</span></span>
+    
+    <a href="https://www.twitter.com/adamthewizard/"><span id="twitter-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
+
+    <div id="container">
+        
+      <div class="cognito">
+<script src="https://services.cognitoforms.com/s/DNs0pn2AEkualDNyBEa0Fw"></script>
+<script>Cognito.load("forms", { id: "1" });</script>
+</div>
+
+      
+    </div>
+    <script>
+        
+      
+        
+        $("#burger-btn").click(function() {
+
+            $(this).animate({
+                opacity: "0"
+            }, 200);
+            $(".nav").slideToggle("slow");
+
+        });
+
+        $("#close-btn").click(function() {
+
+            $(".nav").slideToggle("slow", function() {
+
+                $("#burger-btn").animate({
+                    opacity: "1"
+                }, 200);
+            })
+
+        });
+        
+        $(window).ready(function() {
+            
+            $("#container").animate({opacity:"1"}, 3000);
+            
+        })
+        
+        
+
+    </script>
+
+</body>
+
+</html>
